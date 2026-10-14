@@ -1,0 +1,38 @@
+/* Estructura general: ingreso, menú lateral, área de contenido y diseño adaptable */
+/* Ingreso */
+.ingreso{min-height:100vh;display:grid;place-items:center;padding:1.5rem}
+.ingreso-caja{background:var(--papel);border:1px solid var(--linea);border-radius:14px;padding:2rem;width:100%;max-width:420px}
+.marca{display:flex;align-items:center;gap:.6rem;margin-bottom:1.25rem}
+.marca svg{flex:none}
+.marca strong{font-size:1.5rem;color:var(--verde);letter-spacing:-.01em}
+.marca span{display:block;font-size:.85rem;color:var(--gris)}
+.demo{margin-top:1.25rem;font-size:.85rem;color:var(--gris);border-top:1px dashed var(--linea);padding-top:1rem}
+.demo button{display:block;width:100%;text-align:left;background:var(--suave);border:1px solid var(--linea);border-radius:8px;padding:.45rem .7rem;margin-top:.4rem;cursor:pointer}
+.demo button b{color:var(--tinta)}
+
+/* Estructura */
+.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.lateral{background:var(--verde);color:#fff;padding:1.25rem 1rem;display:flex;flex-direction:column;gap:1rem}
+@media (prefers-color-scheme: dark){.lateral{background:#0E1C1A;color:var(--tinta)}}
+.lateral .marca strong{color:#fff}
+@media (prefers-color-scheme: dark){.lateral .marca strong{color:var(--verde)}}
+.lateral .marca span{color:rgba(255,255,255,.75)}
+.menu{display:flex;flex-direction:column;gap:.2rem}
+.menu button{background:none;border:0;color:inherit;text-align:left;padding:.55rem .75rem;border-radius:8px;cursor:pointer;opacity:.85}
+.menu button:hover{background:rgba(255,255,255,.1);opacity:1}
+.menu button.activo{background:var(--placa);color:#1B2826;opacity:1;font-weight:600}
+.usuario{margin-top:auto;font-size:.85rem;border-top:1px solid rgba(255,255,255,.2);padding-top:.8rem}
+.usuario b{display:block;font-size:.95rem}
+.usuario button{margin-top:.6rem;background:transparent;border:1px solid rgba(255,255,255,.5);color:inherit;border-radius:8px;padding:.35rem .7rem;cursor:pointer}
+main{padding:1.75rem 2rem;max-width:1150px;width:100%;min-width:0}
+.encabezado{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.encabezado p{color:var(--gris);margin:0}
+
+@media (max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .lateral{flex-direction:row;flex-wrap:wrap;align-items:center}
+  .menu{flex-direction:row;flex-wrap:wrap}
+  .usuario{margin:0;border:0;padding:0}
+  .columnas{grid-template-columns:1fr}
+  main{padding:1.25rem}
+}

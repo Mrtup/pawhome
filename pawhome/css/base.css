@@ -1,0 +1,25 @@
+/* Variables de color, tipografía y estilos base */
+:root{
+  --verde:#1F4E4A; --verde-2:#2E6B64; --menta:#EEF5F2; --papel:#FFFFFF;
+  --tinta:#1B2826; --gris:#5C6B68; --linea:#CFDDD8; --placa:#F2B43C;
+  --ok:#2E7D4F; --alerta:#B3412E; --suave:#F7FAF9;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --verde:#7FC4B8; --verde-2:#9AD3C8; --menta:#122220; --papel:#1A2D2A;
+    --tinta:#E6F0ED; --gris:#A3B5B1; --linea:#2F4743; --placa:#F2B43C;
+    --ok:#6BC28E; --alerta:#F08A75; --suave:#16302C;
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--menta);color:var(--tinta);font-size:15px;line-height:1.5}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--placa);outline-offset:2px}
+h1,h2,h3{margin:0 0 .5rem;line-height:1.25}
+h2{font-size:1.45rem}
+h3{font-size:1.05rem}
+p{margin:.25rem 0 .75rem}
+.oculto{display:none!important}
+

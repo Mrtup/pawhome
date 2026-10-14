@@ -1,0 +1,60 @@
+/* Componentes reutilizables: bloques, formularios, tablas, estados, planes, fichas y avisos */
+/* Bloques */
+.bloque{background:var(--papel);border:1px solid var(--linea);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem}
+.columnas{display:grid;grid-template-columns:minmax(290px,370px) minmax(0,1fr);gap:1.25rem;align-items:start}
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:1.25rem}
+.cifra{background:var(--papel);border:1px solid var(--linea);border-left:6px solid var(--verde-2);border-radius:10px;padding:.9rem 1rem}
+.cifra b{display:block;font-size:clamp(1.35rem,5vw,1.8rem);color:var(--verde);overflow-wrap:anywhere}
+.cifra span{color:var(--gris);font-size:.9rem}
+
+/* Formularios */
+label{display:block;font-size:.88rem;font-weight:600;margin:.65rem 0 .25rem}
+input,select,textarea{width:100%;padding:.55rem .65rem;border:1px solid var(--linea);border-radius:8px;background:var(--suave)}
+textarea{min-height:70px;resize:vertical}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;align-items:end}
+.fila>div{min-width:0}
+.chequeos{display:grid;grid-template-columns:1fr 1fr;gap:.25rem .75rem;margin-top:.3rem}
+.chequeos label{font-weight:400;display:flex;gap:.4rem;align-items:center;margin:0}
+.chequeos input{width:auto}
+.btn{background:var(--verde);color:#fff;border:0;border-radius:8px;padding:.6rem 1rem;cursor:pointer;font-weight:600;margin-top:1rem}
+@media (prefers-color-scheme: dark){.btn{color:#0E1C1A}}
+.btn:hover{background:var(--verde-2)}
+.btn-sec{background:transparent;color:var(--verde);border:1px solid var(--verde);border-radius:8px;padding:.3rem .6rem;cursor:pointer;font-size:.85rem;margin:.1rem}
+.btn-sec.peligro{color:var(--alerta);border-color:var(--alerta)}
+.ayuda{font-size:.82rem;color:var(--gris);margin-top:.3rem}
+.aviso{border-radius:8px;padding:.6rem .8rem;margin-top:.8rem;font-size:.9rem}
+.aviso.error{background:rgba(179,65,46,.12);color:var(--alerta)}
+.aviso.bien{background:rgba(46,125,79,.12);color:var(--ok)}
+
+/* Tablas */
+.tabla-env{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{text-align:left;font-weight:600;color:var(--gris);border-bottom:2px solid var(--linea);padding:.5rem .55rem;white-space:nowrap}
+td{border-bottom:1px solid var(--linea);padding:.55rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+.vacio{color:var(--gris);padding:1rem 0;text-align:center}
+.estado{display:inline-block;border-radius:999px;padding:.1rem .6rem;font-size:.8rem;font-weight:600;background:var(--suave);border:1px solid var(--linea);white-space:nowrap}
+.estado.Pendiente{border-color:var(--placa)}
+.estado.Confirmada{border-color:var(--verde-2);color:var(--verde-2)}
+.estado.Encamino{background:var(--placa);color:#1B2826;border-color:var(--placa)}
+.estado.Completada{background:rgba(46,125,79,.14);color:var(--ok);border-color:transparent}
+.estado.Cancelada{color:var(--alerta);border-color:var(--alerta)}
+
+/* Planes */
+.planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.plan{background:var(--papel);border:1px solid var(--linea);border-radius:12px;padding:1.1rem;position:relative}
+.plan .precio{font-size:1.6rem;font-weight:700;color:var(--verde)}
+.plan .precio small{font-size:.85rem;font-weight:400;color:var(--gris)}
+.plan ul{padding-left:1.1rem;margin:.5rem 0}
+.plan.mio{border:2px solid var(--placa)}
+.etiqueta{position:absolute;top:-11px;right:14px;background:var(--placa);color:#1B2826;font-size:.78rem;font-weight:700;padding:.1rem .55rem;border-radius:6px}
+
+/* Fichas de mascotas: la placa del collar */
+.fichas{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.ficha{background:var(--papel);border:1px solid var(--linea);border-radius:12px;padding:1rem;display:flex;gap:.8rem}
+.placa{flex:none;width:46px;height:46px;border-radius:50%;background:var(--placa);display:grid;place-items:center;font-weight:800;color:#1B2826;font-size:1.1rem;box-shadow:inset 0 0 0 3px rgba(0,0,0,.08)}
+.ficha small{color:var(--gris);display:block}
+
+.toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--tinta);color:var(--papel);padding:.7rem 1rem;border-radius:10px;font-size:.92rem;opacity:0;transform:translateY(8px);transition:.25s;pointer-events:none}
+.toast.ver{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}

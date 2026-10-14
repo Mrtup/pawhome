@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PawHome | Servicios para mascotas a domicilio</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+
+  <!-- Pantalla de ingreso -->
+  <section id="vistaIngreso" class="ingreso">
+    <div class="ingreso-caja">
+      <div class="marca">
+        <img src="assets/img/logo.svg" width="44" height="44" alt="">
+        <div><strong>PawHome</strong><span>Cuidado para tu mascota, en tu casa</span></div>
+      </div>
+      <h2>Iniciar sesión</h2>
+      <form id="formIngreso" novalidate>
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" type="email" autocomplete="username" required>
+        <label for="clave">Contraseña</label>
+        <input id="clave" type="password" autocomplete="current-password" required>
+        <button class="btn" type="submit" style="width:100%">Ingresar</button>
+        <div id="errorIngreso" class="aviso error oculto"></div>
+      </form>
+      <div class="demo">
+        Cuentas de prueba (contraseña <b>demo123</b>). Toque una para llenar los datos:
+        <button type="button" data-demo="admin@pawhome.co"><b>Administrador</b> · admin@pawhome.co</button>
+        <button type="button" data-demo="maria@correo.com"><b>Cliente</b> · maria@correo.com</button>
+        <button type="button" data-demo="laura@pawhome.co"><b>Profesional</b> · laura@pawhome.co</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aplicación -->
+  <div id="vistaApp" class="app oculto">
+    <aside class="lateral">
+      <div class="marca">
+        <img src="assets/img/logo-claro.svg" width="36" height="36" alt="">
+        <div><strong>PawHome</strong><span id="rolTexto"></span></div>
+      </div>
+      <nav class="menu" id="menu" aria-label="Menú principal"></nav>
+      <div class="usuario">
+        <b id="nombreUsuario"></b><span id="correoUsuario"></span>
+        <button type="button" id="btnSalir">Cerrar sesión</button>
+      </div>
+    </aside>
+    <main id="contenido" tabindex="-1"></main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
